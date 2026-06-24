@@ -67,9 +67,6 @@ function initArchiveTimeline() {
           </div>
         </div>
         <div class="timeline-actions">
-          <a href="${meeting.notionUrl}" target="_blank" class="btn btn-outline btn-sm notion-icon-link" aria-label="Notionで元のページを開く" title="Notionで元のページを開く">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
           <button class="btn btn-outline btn-sm view-details-btn" data-id="${meeting.id}">
             詳細を見る <i class="fa-solid fa-chevron-right"></i>
           </button>
@@ -98,6 +95,12 @@ function openMeetingDetail(meetingId, updateHash = true) {
   if (modalBackdrop && modalContent) {
     // Render dynamic HTML contents
     modalContent.innerHTML = meeting.html;
+    
+    // Remove Notion direct link wrappers if any
+    const notionLinkWrapper = modalContent.querySelector('.notion-link-wrapper');
+    if (notionLinkWrapper) {
+      notionLinkWrapper.remove();
+    }
     
     // Add slide link behavior correction if any
     const links = modalContent.querySelectorAll('a');
