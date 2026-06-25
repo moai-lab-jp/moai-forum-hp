@@ -1278,3 +1278,106 @@ a {
   color: var(--text-primary);
   background: rgba(255, 255, 255, 0.08);
 }
+
+/* Sponsors Section */
+.sponsors-section {
+  padding: 1.5rem 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.sponsors-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.sponsors-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+.sponsors-logos {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.sponsor-logo-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.sponsor-logo-link:hover {
+  transform: translateY(-2px);
+}
+
+.sponsor-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.sponsor-logo-link:hover .sponsor-name {
+  color: var(--accent-cyan);
+}
+
+.sponsor-logo {
+  height: 38px;
+  width: auto;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Specific filters for visibility on dark theme */
+.sponsor-logo.moai-logo {
+  filter: brightness(0) invert(1); /* 透過ロゴを白抜きに */
+}
+
+.sponsor-logo.logopt-logo {
+  filter: invert(1) contrast(1.1) brightness(1.2); /* 白背景を黒背景にし、文字を白く反転 */
+}
+
+.sponsor-logo-link:hover .sponsor-logo {
+  opacity: 1;
+}
+
+.sponsor-logo-link:hover .sponsor-logo.moai-logo {
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(0, 242, 254, 0.6)); /* ホバー時にシアンのネオン効果 */
+}
+
+.sponsor-logo-link:hover .sponsor-logo.logopt-logo {
+  filter: invert(1) contrast(1.2) brightness(1.4) drop-shadow(0 0 8px rgba(0, 242, 254, 0.4)); /* ホバー時に明るさとネオン効果 */
+}
+
+@media (max-width: 768px) {
+  .sponsors-container {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  .sponsors-logos {
+    gap: 2rem;
+    justify-content: center;
+  }
+  .sponsor-logo {
+    height: 32px;
+  }
+}
+
