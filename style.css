@@ -638,11 +638,53 @@ a {
   justify-content: center;
   font-size: 1.5rem;
   color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+/* HPリンクのあるアバター */
+a.member-avatar {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a.member-avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
 }
 
 .member-card:hover .member-avatar {
   color: var(--accent-cyan);
   border-color: var(--accent-cyan);
+}
+
+/* メンバータグ（専門分野） */
+.member-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: center;
+  margin-top: 0.75rem;
+  width: 100%;
+}
+
+.member-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 0.15rem 0.45rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+.member-card:hover .member-tag {
+  border-color: rgba(6, 182, 212, 0.2);
+  background: rgba(6, 182, 212, 0.03);
+  color: var(--text-primary);
 }
 
 .member-name {
