@@ -561,7 +561,7 @@ a {
 
 .program-note {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
   padding: 1rem;
   background: rgba(16, 185, 129, 0.05);
@@ -571,6 +571,32 @@ a {
   font-weight: 600;
   font-size: 0.95rem;
 }
+
+.program-note i {
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.program-note-text {
+  text-box: trim-both cap alphabetic;
+  line-height: 1.5;
+}
+
+.program-note-link {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.program-note-link:hover {
+  color: var(--accent-emerald);
+  opacity: 0.9;
+}
+
 
 .sub-event {
   border-radius: 16px;
