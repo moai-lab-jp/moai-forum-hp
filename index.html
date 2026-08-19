@@ -167,116 +167,37 @@
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Upcoming Events</h2>
-          <p class="section-subtitle">次回イベントと講演プログラム</p>
+          <p class="section-subtitle">次回イベントのご案内</p>
         </div>
 
-        <div class="event-showcase glass">
-          <div class="event-header-info">
-            <span class="event-badge animate-pulse">Next Event</span>
-            <h3 class="event-title">第10回 MOAI 研究部会</h3>
-            <div class="event-meta-grid">
-              <div class="meta-item">
-                <i class="fa-regular fa-calendar-days"></i>
-                <div>
-                  <strong>日時</strong>
-                  <span>2026年8月18日（火曜日） 15:00 - 18:00</span>
-                </div>
-              </div>
-              <div class="meta-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <div>
-                  <strong>場所</strong>
-                  <span>商船三井 虎ノ門エンパワーメントセンター「SANGO」</span>
-                  <span class="text-muted text-xs">東京都港区虎ノ門2丁目6-1 虎ノ門ヒルズステーションタワー 35F (<a
-                      href="https://www.ehills.co.jp/rp/dfw/EHILLS/building/roadmap/toramon-statower/toramon-statower.php"
-                      target="_blank" class="inline-link">詳細地図</a>)</span>
-                </div>
-              </div>
-              <div class="meta-item">
-                <i class="fa-solid fa-users"></i>
-                <div>
-                  <strong>形式・人数</strong>
-                  <span>対面開催</span>
-                  <span class="text-muted text-xs">参加対象：大学関係者、学生、企業人（同業他社様はお控えください）</span>
-                </div>
-              </div>
-            </div>
-            <div class="event-action" style="margin-top: 1rem; align-self: flex-start;">
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSflEpL_6II-hJxxdPaNO7RNNxTNgm62HyWfDy2lJ2SitkTmgw/viewform?pli=1"
-                target="_blank" class="btn btn-primary">
-                <i class="fa-solid fa-pen-to-square"></i> セミナー参加申込（Googleフォーム） <i
-                  class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-            </div>
+        <div class="event-showcase glass event-coming-soon">
+          <div class="coming-soon-glow" aria-hidden="true"></div>
+
+          <span class="event-badge event-badge-soon animate-pulse">Coming Soon</span>
+
+          <div class="coming-soon-icon" aria-hidden="true">
+            <i class="fa-regular fa-calendar-plus"></i>
           </div>
 
-          <div class="event-divider"></div>
+          <h3 class="coming-soon-title">第11回 MOAI 研究部会</h3>
+          <p class="coming-soon-lead">次回開催に向けて、日程・会場・講演プログラムを調整中です。</p>
+          <p class="coming-soon-text">
+            詳細が決まり次第、本ページおよびメールにてご案内いたします。<br>
+            これまでの部会の講演内容は、下記アーカイブよりご覧いただけます。
+          </p>
 
-          <h4 class="program-heading">講演プログラム</h4>
+          <div class="coming-soon-actions">
+            <span class="btn btn-primary btn-disabled" aria-disabled="true">
+              <i class="fa-regular fa-hourglass-half"></i> 次回のご案内までお待ちください
+            </span>
+            <a href="#archive" class="btn btn-outline">
+              <i class="fa-solid fa-clock-rotate-left"></i> 過去の部会を見る
+            </a>
+          </div>
 
-          <div class="program-timeline">
-            <!-- Program 1 -->
-            <div class="program-item">
-              <div class="program-time">15:00 - 16:00</div>
-              <div class="program-body">
-                <div class="speaker-info">
-                  <span class="speaker-name">久保 幹雄 氏</span>
-                  <span class="speaker-title">MOAI-Lab CTO / 東京海洋大学 教授</span>
-                </div>
-                <h5 class="lecture-title">「エージェントスキル：自律型 AI が変える最適化とサプライチェーンの未来」</h5>
-                <p class="lecture-abstract">
-                  近年、用途ごとに専用のエージェントをゼロから構築するという発想は、大きく見直されつつある。現在では、強力な汎用エージェントを基盤とし、その上に専門知識を「スキル」として追加していく設計が、より現実的で拡張性の高いアプローチとして注目されている。本講演では、AIの黎明からエージェントスキルまでの道程、スキルの作り方、便利なスキルの紹介とその裏にあるエンジニアリングの解説を行う。
-                </p>
-              </div>
-            </div>
-
-            <!-- Program 2 -->
-            <div class="program-item">
-              <div class="program-time">16:10 - 17:10</div>
-              <div class="program-body">
-                <div class="speaker-info">
-                  <span class="speaker-name">小林 和博 氏</span>
-                  <span class="speaker-title">MOAI-Lab CAIO / 青山学院大学 准教授</span>
-                </div>
-                <h5 class="lecture-title">「エージェントスキルによるサプライチェーン最適化: 需要予測から統合事業計画まで」</h5>
-                <p class="lecture-abstract">
-                  近年、サプライチェーンマネジメントにおいて、領域ごとに専用システムを構築するアプローチが大きな転換点を迎えている。需要予測から配送・物流ネットワーク・リスク・収益管理まで、縦割りに分かれた意思決定問題に対し、長年研究開発されてきた数理最適化エンジン群をエージェントスキルとして再パッケージし、自然言語のひと言で適切なエンジンが選択・起動される枠組みへの転換が求められている。本講演では、こうしたスキル群と背後にある最適化モデルの考え方を解説し、領域横断のスキルを束ねた
-                  S&OP の自動オーケストレーションが、次世代の統合事業計画（IBP）の現実的な姿となりうることを論じる。
-                </p>
-              </div>
-            </div>
-
-            <!-- Program 3 -->
-            <div class="program-item">
-              <div class="program-time">17:20 - 17:50</div>
-              <div class="program-body">
-                <div class="speaker-info">
-                  <span class="speaker-name">坂本 淳子 氏</span>
-                  <span class="speaker-title">商船三井システムズ 執行役員</span>
-                </div>
-                <h5 class="lecture-title">「企業における最適化活用と意思決定高度化へのアプローチ」</h5>
-                <p class="lecture-abstract">
-                  近年、個別業務ごとに最適化モデルやシステムを構築するというアプローチは、大きな転換点を迎えている。個別最適の積み上げだけではなく、データ、シミュレーション、AIを組み合わせることで、企業全体の意思決定を高度化する枠組みへと発展させることが求められている。本講演では、企業における最適化の取り組みを具体例として、複雑な実務課題をどのように構造化し、実運用に耐える最適化問題として設計し、その先の意思決定の高度化につなげるのか、についてアプローチを紹介する。
-                </p>
-              </div>
-            </div>
-
-            <div class="program-note">
-              <i class="fa-solid fa-circle-info"></i>
-              <span class="program-note-text">
-                終了後に懇親会（<a href="https://www.royalgarden.co.jp/" target="_blank" rel="noopener noreferrer"
-                  class="program-note-link">ロイヤルガーデン虎ノ門 <i
-                    class="fa-solid fa-arrow-up-right-from-square"></i></a>）を予定しております。
-              </span>
-            </div>
-
-            <div class="event-action" style="margin-top: 2rem; text-align: center;">
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSflEpL_6II-hJxxdPaNO7RNNxTNgm62HyWfDy2lJ2SitkTmgw/viewform?pli=1"
-                target="_blank" class="btn btn-primary">
-                <i class="fa-solid fa-pen-to-square"></i> このセミナー（第10回部会）に参加を申し込む <i
-                  class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-            </div>
+          <div class="coming-soon-last">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>直近の開催：<strong>第10回 MOAI 研究部会</strong>（2026年8月18日／商船三井 虎ノ門エンパワーメントセンター「SANGO」）は盛況のうちに終了しました。</span>
           </div>
         </div>
 
