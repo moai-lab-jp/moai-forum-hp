@@ -44,7 +44,10 @@ function initArchiveTimeline() {
 
   archiveTimeline.innerHTML = '';
 
-  meetingsData.forEach(meeting => {
+  // Render in reverse order (newest first)
+  const sortedMeetings = [...meetingsData].reverse();
+
+  sortedMeetings.forEach(meeting => {
     // Generate simple readable tag for display
     let tag = `第 ${meeting.num} 回`;
     if (meeting.num === 99) {
@@ -54,7 +57,7 @@ function initArchiveTimeline() {
     const item = document.createElement('div');
     item.className = 'timeline-item';
     item.innerHTML = `
-      <div class="timeline-card glass">
+      <div class="timeline-card glass" style="cursor: pointer;">
         <div class="timeline-content">
           <div class="timeline-header">
             <span class="timeline-tag">${tag}</span>
@@ -74,9 +77,9 @@ function initArchiveTimeline() {
       </div>
     `;
 
-    // Add click handler to open details
-    const btn = item.querySelector('.view-details-btn');
-    btn.addEventListener('click', () => {
+    // Add click handler to card to open details
+    const card = item.querySelector('.timeline-card');
+    card.addEventListener('click', () => {
       openMeetingDetail(meeting.id);
     });
 
