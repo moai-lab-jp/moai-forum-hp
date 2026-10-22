@@ -24,8 +24,8 @@
   <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <script type="module" crossorigin src="./assets/index-D1kz3z3r.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CjqhMGtv.css">
+  <script type="module" crossorigin src="./assets/index-Cq9_0QzV.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-3BUMcitO.css">
 </head>
 
 <body>
@@ -197,12 +197,154 @@
                   <strong>形式</strong>
                   <span>対面開催（終了後 懇親会あり）</span>
                   <span class="text-muted text-xs">参加対象：大学関係者、学生、企業人</span>
+                  <!-- フォーム再開時に有効化
+                  <a href="#registration" class="text-accent text-xs hover:underline" style="display: inline-flex; align-items: center; gap: 0.3rem; font-weight: 700; margin-top: 0.25rem;">
+                    <i class="fa-solid fa-arrow-down"></i> 参加申し込みはこちら
+                  </a>
+                  -->
                 </div>
               </div>
             </div>
           </div>
 
           <div class="event-divider"></div>
+
+          <!-- =========================================================================
+               Registration Section (コメントアウト中)
+               =========================================================================
+          <div class="event-registration-wrap" id="registration">
+            <div class="registration-header">
+              <div class="registration-title-group">
+                <span class="registration-badge"><i class="fa-solid fa-ticket"></i> Registration</span>
+                <h4 class="registration-title">第11回 MOAI 研究部会 参加申し込み</h4>
+              </div>
+              <p class="registration-desc">
+                参加をご希望の方は、以下のフォームよりお申し込みください。<br class="hide-mobile">
+                研究部会のみの参加（無料）、または終了後の懇親会（定員20名）への参加をお選びいただけます。
+              </p>
+            </div>
+
+            /* Registration Form */
+            <form id="eventRegistrationForm" class="registration-form">
+              /* 参加区分 */
+              <div class="form-group">
+                <label class="form-label">
+                  参加区分 <span class="required-badge">必須</span>
+                </label>
+                <div class="participation-options">
+                  <label class="participation-card">
+                    <input type="radio" name="participation" value="session_only" checked required>
+                    <div class="card-inner">
+                      <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                      <div class="card-text">
+                        <span class="card-title">研究部会のみ参加</span>
+                        <span class="card-meta">15:00 - 18:30 ／ 参加費：無料</span>
+                      </div>
+                      <div class="card-check"><i class="fa-solid fa-circle-check"></i></div>
+                    </div>
+                  </label>
+
+                  <label class="participation-card">
+                    <input type="radio" name="participation" value="with_social" required>
+                    <div class="card-inner">
+                      <div class="card-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+                      <div class="card-text">
+                        <span class="card-title">研究部会 ＋ 懇親会参加</span>
+                        <span class="card-meta">19:00〜 ／ 予算：約4,000円（先着20名）</span>
+                      </div>
+                      <div class="card-check"><i class="fa-solid fa-circle-check"></i></div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              /* お名前 & ご所属 (2カラム) */
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="regName" class="form-label">
+                    お名前 <span class="required-badge">必須</span>
+                  </label>
+                  <div class="input-with-icon">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" id="regName" name="name" required placeholder="例：山田 太郎" class="form-input">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="regAffiliation" class="form-label">
+                    ご所属 <span class="required-badge">必須</span>
+                  </label>
+                  <div class="input-with-icon">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <input type="text" id="regAffiliation" name="affiliation" required placeholder="例：〇〇大学 / 株式会社〇〇" class="form-input">
+                  </div>
+                </div>
+              </div>
+
+              /* メールアドレス */
+              <div class="form-group">
+                <label for="regEmail" class="form-label">
+                  メールアドレス <span class="required-badge">必須</span>
+                </label>
+                <div class="input-with-icon">
+                  <i class="fa-regular fa-envelope"></i>
+                  <input type="email" id="regEmail" name="email" required placeholder="例：taro.yamada@example.com" class="form-input">
+                </div>
+                <span class="form-hint">※お申し込み完了のご案内や当日のご案内メールをお送りします。</span>
+              </div>
+
+              /* ご質問・備考（任意） */
+              <div class="form-group">
+                <label for="regComment" class="form-label">
+                  ご質問・備考 <span class="optional-badge">任意</span>
+                </label>
+                <textarea id="regComment" name="comment" rows="2" placeholder="登壇者へのご質問や事務局への連絡事項等があればご記入ください" class="form-input form-textarea"></textarea>
+              </div>
+
+              /* 送信ボタン & 注意事項 */
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-submit-reg" id="regSubmitBtn">
+                  <span>参加を申し込む</span>
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+                <p class="form-security-note">
+                  <i class="fa-solid fa-shield-halved"></i> ご記入いただいた個人情報は、本研究部会の運営および事務連絡のみに使用いたします。
+                </p>
+              </div>
+            </form>
+
+            /* 完了メッセージ表示（送信完了後に切り替え） */
+            <div id="registrationSuccessMessage" class="registration-success-card" style="display: none;">
+              <div class="success-icon-box">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <h4 class="success-title">お申し込みを受け付けました</h4>
+              <p class="success-desc">
+                第11回 MOAI 研究部会へのお申し込みありがとうございます。<br>
+                ご登録いただいたメールアドレス（<strong id="successEmailDisplay" class="text-accent"></strong>）宛に受付完了の確認メールをお送りいたします。
+              </p>
+              <div class="success-summary">
+                <div class="summary-item">
+                  <span class="summary-label">お名前</span>
+                  <span class="summary-val" id="successNameDisplay"></span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-label">ご所属</span>
+                  <span class="summary-val" id="successAffiliationDisplay"></span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-label">参加区分</span>
+                  <span class="summary-val" id="successTypeDisplay"></span>
+                </div>
+              </div>
+              <div class="success-actions">
+                <button type="button" class="btn btn-outline btn-sm" id="regResetBtn">
+                  <i class="fa-solid fa-rotate-left"></i> 別の内容で申し込む・修正する
+                </button>
+              </div>
+            </div>
+          </div>
+          ========================================================================= -->
 
           <h4 class="program-heading">講演プログラム</h4>
 
@@ -258,7 +400,12 @@
           <div class="program-note" style="margin-top: 1.5rem;">
             <i class="fa-solid fa-circle-info"></i>
             <span class="program-note-text">
-              研究部会終了後、懇親会は19:00（7:00）からで、予算は4,000円（最大20名）を予定しています。
+              研究部会終了後、懇親会は19:00より、予算は4,000円（最大20名）を予定しています。
+              <!-- フォーム再開時に有効化
+              <a href="#registration" class="program-note-link" style="margin-left: 0.5rem; font-weight: 700;">
+                <i class="fa-solid fa-arrow-up"></i> 参加申し込みフォームへ
+              </a>
+              -->
             </span>
           </div>
 

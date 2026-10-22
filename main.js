@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initArchiveTimeline();
   initHashRouter();
   initModalCloseEvents();
+  initRegistrationForm();
 });
 
 // Mobile Navigation Menu Toggle
@@ -179,4 +180,82 @@ function initHashRouter() {
   // Run on load and hashchange
   window.addEventListener('hashchange', handleRouting);
   handleRouting();
+}
+
+// Next Event Registration Form Interaction
+function initRegistrationForm() {
+  const form = document.getElementById('eventRegistrationForm');
+  const successCard = document.getElementById('registrationSuccessMessage');
+  const submitBtn = document.getElementById('regSubmitBtn');
+  const resetBtn = document.getElementById('regResetBtn');
+
+  if (!form || !successCard) return;
+
+  // Form Submission
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const participation = formData.get('participation');
+    const name = formData.get('name');
+    const affiliation = formData.get('affiliation');
+    const email = formData.get('email');
+    const comment = formData.get('comment');
+
+    const participationText = participation === 'with_social' 
+      ? '研究部会 ＋ 懇親会参加（会費：約4,000円）' 
+      : '研究部会のみ参加（無料）';
+
+    // Button loading state
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>送信中...</span>';
+    }
+
+    // Simulate asynchronous submission
+    setTimeout(() => {
+      // Populate confirmation summary
+      const nameEl = document.getElementById('successNameDisplay');
+      const affilEl = document.getElementById('successAffiliationDisplay');
+      const typeEl = document.getElementById('successTypeDisplay');
+      const emailEl = document.getElementById('successEmailDisplay');
+
+      if (nameEl) nameEl.textContent = name;
+      if (affilEl) affilEl.textContent = affiliation;
+      if (typeEl) typeEl.textContent = participationText;
+      if (emailEl) emailEl.textContent = email;
+
+      // Switch views
+      form.style.display = 'none';
+      successCard.style.display = 'flex';
+
+      // Scroll smoothly into view
+      successCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      // Reset button state
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>参加を申し込む</span> <i class="fa-solid fa-paper-plane"></i>';
+      }
+
+      console.log('Registration submitted:', {
+        participation,
+        participationText,
+        name,
+        affiliation,
+        email,
+        comment,
+        timestamp: new Date().toISOString()
+      });
+    }, 600);
+  });
+
+  // Re-open form to modify or submit another
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      successCard.style.display = 'none';
+      form.style.display = 'flex';
+      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
 }
