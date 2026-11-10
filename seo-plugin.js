@@ -168,7 +168,6 @@ function meetingPage(meeting, index, cssFile) {
         <a href="../#next-event" class="nav-link">Next Event</a>
         <a href="../#members" class="nav-link">Members</a>
         <a href="../#archive" class="nav-link">Archive</a>
-        <a href="../#join" class="btn btn-primary btn-sm">Mailing List</a>
       </nav>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
         <i class="fa-solid fa-bars"></i>
