@@ -1,9 +1,8 @@
 // サイト全体のSEO設定。ビルド時に seo-plugin.js が読み込みます。
 
-// 公開URL（末尾スラッシュなし）。例: 'https://forum.example.jp'
-// 空のままだと canonical / og:url / sitemap.xml は出力されません。
-// 環境変数 SITE_URL でも指定できます（例: SITE_URL=https://... npm run build）。
-export const SITE_URL = '';
+// 公開URL（末尾スラッシュなし）。canonical / og:url / sitemap.xml に使われます。
+// 環境変数 SITE_URL でも上書きできます（例: SITE_URL=https://... npm run build）。
+export const SITE_URL = 'https://forum.moai-lab.jp';
 
 export const SITE_NAME = 'MOAI Forum';
 

@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://forum.moai-lab.jp/sitemap.xml
