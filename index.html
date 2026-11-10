@@ -4,15 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MOAI Forum | 数理最適化と機械学習の融合に関するフォーラム</title>
-  <meta name="description"
-    content="MOAI Forum (Mathematical Optimization / Artificial Intelligence) は、数理最適化と機械学習を融合した新しい学問分野の実務適用を目指す研究フォーラムです。">
+  <title>MOAI Forum（モアイフォーラム）| 数理最適化と機械学習・AIの融合 研究部会</title>
+  <meta name="keywords" content="MOAI Forum,モアイフォーラム,数理最適化,機械学習,AI,人工知能,スケジューリング学会,研究部会,オペレーションズ・リサーチ,サプライチェーン最適化,AIエージェント">
+  <meta name="theme-color" content="#080b11">
+  <meta name="robots" content="index, follow, max-image-preview:large">
 
-  <!-- OG Tags -->
-  <meta property="og:title" content="MOAI Forum | 数理最適化と機械学習の融合に関するフォーラム">
-  <meta property="og:description" content="数理最適化と機械学習を融合した新しい学問分野の実務適用を目指す研究フォーラム。">
+  <!-- OG / Twitter Card -->
   <meta property="og:type" content="website">
-  <meta property="og:image" content="./hero_backup.png">
+  <meta property="og:site_name" content="MOAI Forum">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- description / canonical / og:url / og:image / 構造化データ(JSON-LD) は
+       ビルド時に seo-plugin.js が site.config.js の設定から挿入します -->
+  <!-- SEO:HEAD -->
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,7 +77,7 @@
       </div>
       <div class="hero-visual">
         <div class="visual-wrapper">
-          <img src="./hero_backup.png" alt="MOAI optimization concept visualization" class="hero-image">
+          <img src="./hero.webp" alt="数理最適化と機械学習の融合を表すMOAI Forumのイメージ" class="hero-image" width="1024" height="1024" fetchpriority="high">
           <div class="glow-effect"></div>
         </div>
       </div>
@@ -82,11 +90,11 @@
       <span class="sponsors-label">Supported By</span>
       <div class="sponsors-logos">
         <a href="https://www.moai-lab.jp/" target="_blank" class="sponsor-logo-link" title="MOAI Lab">
-          <img src="./logo/moai.png" alt="MOAI Lab" class="sponsor-logo moai-logo">
+          <img src="./logo/moai.png" alt="MOAI Lab（株式会社モアイラボ）ロゴ" class="sponsor-logo moai-logo" width="800" height="700" loading="lazy">
           <span class="sponsor-name">MOAI Lab</span>
         </a>
         <a href="https://www.logopt.com/" target="_blank" class="sponsor-logo-link" title="LogOpt">
-          <img src="./logo/logopt.jpg" alt="LogOpt" class="sponsor-logo logopt-logo">
+          <img src="./logo/logopt.jpg" alt="LogOpt ロゴ" class="sponsor-logo logopt-logo" width="1300" height="686" loading="lazy">
           <span class="sponsor-name">LOGOPT</span>
         </a>
       </div>
@@ -172,6 +180,7 @@
 
         <div class="event-showcase glass">
           <div class="event-header-info">
+            <!-- 開催情報を更新したら site.config.js の nextEvent（検索結果用の構造化データ）も更新してください -->
             <span class="event-badge animate-pulse">Next Event</span>
             <h3 class="event-title">第11回 MOAI 研究部会</h3>
             <div class="event-meta-grid">
@@ -576,7 +585,8 @@
         </div>
 
         <div class="archive-timeline" id="archiveTimeline">
-          <!-- Dynamically generated timeline items -->
+          <!-- ビルド時に seo-plugin.js が一覧を静的に埋め込みます（main.js でも再描画） -->
+          <!-- SEO:ARCHIVE -->
         </div>
       </div>
     </section>

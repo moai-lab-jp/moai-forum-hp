@@ -2046,3 +2046,91 @@ a.member-avatar:hover {
 }
 
 
+
+/* 各回の静的ページ（archive/<slug>.html） */
+.archive-page {
+  padding: 120px 0 5rem;
+}
+
+.archive-page-container {
+  max-width: 880px;
+}
+
+.archive-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.archive-breadcrumb i {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+}
+
+.archive-breadcrumb a:hover {
+  color: var(--accent-cyan);
+}
+
+.archive-page-card {
+  padding: 2.5rem;
+  border-radius: 20px;
+}
+
+.archive-pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.archive-pager-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.archive-pager-link.next {
+  text-align: right;
+}
+
+.archive-pager-link:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+.archive-pager-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.archive-page-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .archive-page {
+    padding-top: 100px;
+  }
+  .archive-page-card {
+    padding: 1.5rem;
+  }
+  .archive-pager {
+    grid-template-columns: 1fr;
+  }
+  .archive-pager-link.next {
+    text-align: left;
+  }
+}

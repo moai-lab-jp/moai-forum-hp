@@ -1,4 +1,5 @@
 import { meetingsData } from './meetings_data.js';
+import { timelineHtml } from './archive_render.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
@@ -43,48 +44,17 @@ function initArchiveTimeline() {
   const archiveTimeline = document.getElementById('archiveTimeline');
   if (!archiveTimeline) return;
 
-  archiveTimeline.innerHTML = '';
+  // 一覧はビルド時にも index.html へ静的に埋め込まれる（検索エンジン向け）。
+  // 「詳細を見る」は各回の静的ページへのリンクだが、ページ内ではモーダルで開く。
+  archiveTimeline.innerHTML = timelineHtml(meetingsData);
 
-  // Render in reverse order (newest first)
-  const sortedMeetings = [...meetingsData].reverse();
-
-  sortedMeetings.forEach(meeting => {
-    // Generate simple readable tag for display
-    let tag = `第 ${meeting.num} 回`;
-    if (meeting.num === 99) {
-      tag = 'シンポジウム';
-    }
-
-    const item = document.createElement('div');
-    item.className = 'timeline-item';
-    item.innerHTML = `
-      <div class="timeline-card glass" style="cursor: pointer;">
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <span class="timeline-tag">${tag}</span>
-            <h3 class="timeline-title">${meeting.name.replace('SUB-PAGE Link', '').trim()}</h3>
-          </div>
-          <div class="timeline-details">
-            <span><i class="fa-regular fa-calendar"></i> ${meeting.date}</span>
-            <span><i class="fa-solid fa-location-dot"></i> ${meeting.location}</span>
-            ${meeting.participants ? `<span><i class="fa-solid fa-users"></i> ${meeting.participants}</span>` : ''}
-          </div>
-        </div>
-        <div class="timeline-actions">
-          <button class="btn btn-outline btn-sm view-details-btn" data-id="${meeting.id}">
-            詳細を見る <i class="fa-solid fa-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-    `;
-
-    // Add click handler to card to open details
-    const card = item.querySelector('.timeline-card');
-    card.addEventListener('click', () => {
-      openMeetingDetail(meeting.id);
+  archiveTimeline.querySelectorAll('.timeline-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Ctrl/Cmd+クリック等は通常のリンクとして静的ページを開く
+      if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault();
+      openMeetingDetail(card.dataset.id);
     });
-
-    archiveTimeline.appendChild(item);
   });
 }
 
