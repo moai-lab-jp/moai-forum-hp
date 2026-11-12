@@ -45,6 +45,7 @@ function eventLd(ev) {
     eventStatus: 'https://schema.org/EventScheduled',
     eventAttendanceMode: 'https://schema.org/MixedEventAttendanceMode',
     inLanguage: 'ja',
+    isAccessibleForFree: (ev.price ?? 0) === 0,
     location: [
       {
         '@type': 'Place',
@@ -64,7 +65,10 @@ function eventLd(ev) {
     offers: {
       '@type': 'Offer',
       url: ev.registrationUrl,
+      price: ev.price ?? 0,
+      priceCurrency: ev.priceCurrency || 'JPY',
       availability: 'https://schema.org/InStock',
+      validFrom: ev.validFrom || ev.startDate,
     },
   };
 }

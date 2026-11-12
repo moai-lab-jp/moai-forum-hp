@@ -28,6 +28,9 @@ export const nextEvent = {
   },
   onlineUrl: 'https://us06web.zoom.us/meeting/register/aBvn9BaWQZ6PYT81N7RYrA',
   registrationUrl: 'https://forms.gle/HuLXxTcgvoYCtBvUA',
+  price: 0,
+  priceCurrency: 'JPY',
+  validFrom: '2026-10-20T00:00:00+09:00',
   performers: [
     { name: '西角 直樹', affiliation: '三菱総合研究所' },
     { name: '根岸 信太郎', affiliation: '神奈川大学' },
